@@ -1,5 +1,10 @@
 package com.endava.shape;
 
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class Triangle extends Shape {
 	private int base;
 	private int height;

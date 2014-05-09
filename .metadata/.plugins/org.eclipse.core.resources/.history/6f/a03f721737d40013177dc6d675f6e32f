@@ -1,0 +1,10 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		IfThenElse obj1 = new IfThenElse();
+		obj1.print();
+	}
+
+}

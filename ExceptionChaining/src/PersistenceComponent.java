@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class PersistenceComponent {
 
 	void persist(Object arg) throws PersistenceException {

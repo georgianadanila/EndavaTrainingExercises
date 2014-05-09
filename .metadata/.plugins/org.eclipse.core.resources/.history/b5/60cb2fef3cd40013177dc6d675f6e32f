@@ -1,0 +1,20 @@
+
+public class FinallyExample {
+	
+	static int method1() {
+		try {
+			System.out.println("will return 2");
+			return 2;
+		} finally {
+			System.out.println("Executing finally block in method1()");
+		}
+	}
+	
+	static void method2() {
+		try {
+			throw new RuntimeException("Unchecked error");
+		} finally {
+			System.out.println("Executing finally block in method2()");
+		}
+	}
+}

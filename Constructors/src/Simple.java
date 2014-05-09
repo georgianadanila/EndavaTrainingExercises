@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class Simple {
 	int i;
 	

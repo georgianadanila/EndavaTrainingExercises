@@ -4,7 +4,11 @@ import java.io.PrintWriter;
 import java.util.Vector;
 import java.util.logging.Logger;
 
-
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class Exceptions {
 	static int SIZE = 10;
 	private static final Logger LOGGER = Logger.getLogger(Exceptions.class.getName());

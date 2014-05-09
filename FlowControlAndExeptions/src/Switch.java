@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class Switch {
 	int i=3;
 	

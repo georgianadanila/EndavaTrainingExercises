@@ -1,5 +1,10 @@
 package com.endava.shape;
 
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class Rectangle extends Shape{
 	private int length;
 	private int width;

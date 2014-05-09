@@ -1,5 +1,10 @@
 package com.endava.shape;
 
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class ShapeTest {
 	public Rectangle r;
 	public Circle c;

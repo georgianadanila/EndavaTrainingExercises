@@ -1,0 +1,9 @@
+
+public class Simple {
+	int i;
+	
+	
+	Simple(int i) { 
+		i = 5;
+	}
+}

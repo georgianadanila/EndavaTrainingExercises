@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class FinallyExample {
 	
 	static int method1() {

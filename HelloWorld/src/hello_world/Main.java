@@ -1,5 +1,10 @@
 package hello_world;
 
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {

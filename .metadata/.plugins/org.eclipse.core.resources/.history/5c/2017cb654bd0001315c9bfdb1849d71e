@@ -1,0 +1,16 @@
+
+public class ExtendedSimple extends Simple{
+	
+	ExtendedSimple() {
+		
+	}
+	
+	ExtendedSimple(int i) {
+		super(i);
+	}
+	
+	ExtendedSimple(int i, int j) {
+		super(i);
+		this.j = j;
+	}
+}

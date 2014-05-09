@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class IfThenElse {
 	String a1="a";
 	String a2="a";

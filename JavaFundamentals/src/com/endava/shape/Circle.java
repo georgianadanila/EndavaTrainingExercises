@@ -1,5 +1,10 @@
 package com.endava.shape;
 
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class Circle extends Shape{
 	private int radius;
 	

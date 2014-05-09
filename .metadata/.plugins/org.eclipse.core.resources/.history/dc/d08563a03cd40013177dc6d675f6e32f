@@ -1,0 +1,11 @@
+
+public class FinallyExample {
+	
+	static int method1() {
+		try {
+			return 2;
+		} finally {
+			System.out.println("Executing finally block in method1()");
+		}
+	}
+}

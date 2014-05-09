@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class ExtendedSimple extends Simple{
 	int j;
 	
