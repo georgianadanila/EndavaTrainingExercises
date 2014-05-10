@@ -58,7 +58,11 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 			}
 			randomizedQueue = temporaryQueue;
 		}
+<<<<<<< HEAD
 		if (randomIndex != numberOfElements)
+=======
+		//if (randomIndex != numberOfElements)
+>>>>>>> 169d91f943c4424531f0d7fba98e2fe63c148119
 			randomizedQueue[randomIndex] = randomizedQueue[numberOfElements-1];
 		numberOfElements--;
 		return dequeuedItem;
@@ -87,10 +91,16 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
 			@Override
 			public Item next() {
+<<<<<<< HEAD
 				randomIndex = randomObject.nextInt(numberOfElements);
 				while (randomIndex == lastIndex) {
 					randomIndex = randomObject.nextInt(numberOfElements);
 				}
+=======
+				Random random = new Random();
+				random.setSeed(System.currentTimeMillis() + itCounter);
+				randomIndex = random.nextInt(numberOfElements);
+>>>>>>> 169d91f943c4424531f0d7fba98e2fe63c148119
 				lastIndex = randomIndex;
 				itCounter++;
 				return randomizedQueue[randomIndex];
@@ -98,8 +108,12 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
 			@Override
 			public void remove() {
+<<<<<<< HEAD
 				if (randomIndex != numberOfElements)
 					randomizedQueue[randomIndex] = randomizedQueue[numberOfElements];
+=======
+				randomizedQueue[randomIndex] = randomizedQueue[numberOfElements];
+>>>>>>> 169d91f943c4424531f0d7fba98e2fe63c148119
 				numberOfElements--;
 			}
 		};
