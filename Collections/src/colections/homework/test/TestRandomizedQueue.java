@@ -17,7 +17,7 @@ public class TestRandomizedQueue {
 	 * testeaza metoda enqueue - adaug elemente in ordine crescatoare
 	 */
 	public void testEnqueue() {
-		int nr = 15;
+		int nr = 55;
 		for (int i=0; i<nr; i++) {
 			randomizedQueue.enqueue(i);
 		}
@@ -28,7 +28,7 @@ public class TestRandomizedQueue {
 	 * testeaza metoda dequeue - elementele sunt scoase random si afisate
 	 */
 	public void testDequeue() {
-		int nr = 10;
+		int nr = 20;
 		System.out.println(nr + " elemente scose din coada (in ordinea in care sunt scoase)");
 		for (int i=0; i<nr; i++) {
 			System.out.print(randomizedQueue.dequeue() + " ");	
@@ -37,9 +37,6 @@ public class TestRandomizedQueue {
 		System.out.println(randomizedQueue);
 	}
 	
-	/*
-	 * testeaza iteratorul - doar metodele next si hasNext 
-	 */
 	public void testIterator() {
 		System.out.println("Parcurgere elemente cu iterator si afisarea lor");
 		for (Integer elem : randomizedQueue) {
