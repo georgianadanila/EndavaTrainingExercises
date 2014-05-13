@@ -8,11 +8,12 @@ import java.util.List;
 public class PrimeNumberThreadOnElements implements Runnable{
 	private List<Integer> allNumbers;
 	private List<Integer> primeNumbers;
-	private static int i=0;
+	private static int i;
 
 	public PrimeNumberThreadOnElements(List<Integer> allNumbers,  List<Integer> primeNumbers) {
 		this.allNumbers = allNumbers;
 		this.primeNumbers = primeNumbers;
+		i=0;
 	}
 
 	//checks if a number is prime
@@ -33,16 +34,22 @@ public class PrimeNumberThreadOnElements implements Runnable{
 
 	@Override
 	public void run() {
-		Integer number;
-		while (i<allNumbers.size()) {
+		Integer number=null;
+		while (true) {
 			synchronized (allNumbers) {
-				number = allNumbers.get(i++);		
+				if (i==allNumbers.size())
+					break;
+				else {
+					number = allNumbers.get(i);
+					i++;
+				}
 			}
 			if (isPrime(number)) {
 				synchronized (primeNumbers) {
 					primeNumbers.add(number);
 				}
 			}
+			
 		}
 	}
 

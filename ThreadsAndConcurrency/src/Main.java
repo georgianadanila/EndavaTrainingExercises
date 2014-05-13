@@ -11,8 +11,8 @@ import java.util.Random;
 public class Main {
 
 	public static void main(String[] args) throws IOException{
-		int allNumbersLength = 100;
-		int threadNo = 14;
+		int allNumbersLength = 100000;
+		int threadNo = 5;
 		int sizeOfChunk = allNumbersLength/threadNo;
 		List<Integer> allNumbers = new ArrayList<>(allNumbersLength);
 		List<Integer> primeNumbers1 = new ArrayList<>();
@@ -20,14 +20,17 @@ public class Main {
 		List<Integer> primeNumbers3 = new ArrayList<>();
 		List<Thread> threadList = new ArrayList<>();
 		Random randomObject = new Random();
+		long startTime, endTime;
 
 
 		//populate original list with random numbers
 		for (int i=0; i<allNumbersLength; i++) {
-			allNumbers.add(randomObject.nextInt(100));
+			allNumbers.add(i);
 		}
 
+		
 		//-----------one thread computes result for entire list-----------------
+		startTime = System.currentTimeMillis();
 		Thread singleThread = new Thread (new PrimeNumberThreadOnChunks(allNumbers,primeNumbers1,0,allNumbers.size()));
 		singleThread.start();
 
@@ -37,11 +40,14 @@ public class Main {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println(primeNumbers1);
+		endTime = System.currentTimeMillis();
+		System.out.println("Rezultatul in cazul rularii cu un singur thread dureaza: "+(endTime-startTime) + " milisecunde");
+		//System.out.println(primeNumbers1);
 		threadList.clear();
 
-		//primeNumbers.clear();
+		
 		//-----------multiple threads compute results for one chunk from the list each--------------
+		startTime = System.currentTimeMillis();
 		for (int i=0; i<threadNo; i++) {
 			int start = i*sizeOfChunk;
 			int end = i*sizeOfChunk+sizeOfChunk;
@@ -51,6 +57,7 @@ public class Main {
 			}
 			Thread primeNumbersTread = new Thread(new PrimeNumberThreadOnChunks(allNumbers,primeNumbers2,start,end));
 			threadList.add(primeNumbersTread);
+			
 			primeNumbersTread.start();
 		}
 
@@ -62,14 +69,18 @@ public class Main {
 				e.printStackTrace();
 			}
 		}
+		endTime = System.currentTimeMillis();
+		System.out.println("Rezultatul in cazul rularii cu mai multe threaduri, pe chunkuri, dureaza: "+(endTime-startTime) + " milisecunde");
+		//System.out.println(primeNumbers2);
 		threadList.clear();
-		System.out.println(primeNumbers2);
 		System.out.println(primeNumbers1.containsAll(primeNumbers2));
 
+		
 		//--------------multiple threads compute results for one element each------------------------
 		for (int i=0; i<threadNo; i++) {
 			Thread primeNumbersTread = new Thread(new PrimeNumberThreadOnElements(allNumbers,primeNumbers3));
 			threadList.add(primeNumbersTread);
+			startTime = System.currentTimeMillis();
 			primeNumbersTread.start();
 		}
 
@@ -81,8 +92,10 @@ public class Main {
 				e.printStackTrace();
 			}
 		}
+		endTime = System.currentTimeMillis();
+		System.out.println("Rezultatul in cazul rularii cu mai multe threaduri, pe cate un element, dureaza: "+(endTime-startTime) + " milisecunde");
 		threadList.clear();
-		System.out.println(primeNumbers3);
+		//System.out.println(primeNumbers3);
 		System.out.println(primeNumbers3.containsAll(primeNumbers1));
 	}
 
