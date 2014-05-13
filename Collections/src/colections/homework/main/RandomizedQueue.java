@@ -82,8 +82,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 		// nu stergi elementul random din vector =>
 		// ultimul element trebuie sa fie ...
 		randomizedQueue[randomIndex] = randomizedQueue[numberOfElements - 1];
-		if (randomIndex != numberOfElements)
-			randomizedQueue[randomIndex] = randomizedQueue[numberOfElements-1];
 		numberOfElements--;
 		return dequeuedItem;
 	}
@@ -109,6 +107,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 				return itCounter < numberOfElements;
 			}
 			
+
 			@Override
 			public Item next() {
 				if (randomIndex == numberOfElements-1) {
@@ -116,9 +115,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 				}
 				else {
 					randomIndex++;
-				randomIndex = randomObject.nextInt(numberOfElements);
-				while (randomIndex == lastIndex) {
-					randomIndex = randomObject.nextInt(numberOfElements);
 				}
 				lastIndex = randomIndex;
 				itCounter++;
@@ -128,10 +124,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 			@Override
 			public void remove() {
 				throw new UnsupportedOperationException();
-				if (randomIndex != numberOfElements)
-					randomizedQueue[randomIndex] = randomizedQueue[numberOfElements];
-				randomizedQueue[randomIndex] = randomizedQueue[numberOfElements];
-				numberOfElements--;
 			}
 		};
 		return it;
