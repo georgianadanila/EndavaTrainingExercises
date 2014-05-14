@@ -28,7 +28,7 @@ import com.sun.xml.internal.bind.api.TypeReference;
  * @author Georgiana Danila
  *
  */
-public class App {
+public class Main {
 	
 	public static void main( String[] args ) throws JsonParseException, JsonMappingException, IOException {
 		HttpClient httpClient = HttpClientBuilder.create().build();
