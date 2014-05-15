@@ -40,12 +40,11 @@ public class Main {
 
 		PrintWriter out = new PrintWriter("PetStore.html");
 		out.println("<html>");
-		out.println("<title>");
-		out.println(petStore.getInfo().getTitle());
-		out.println("</title>");
 		out.println("<header>");
-		out.println("Api Version "+ petStore.getApiVersion());
+		out.println(petStore.getInfo().getTitle());
 		out.println("</header>");
+		out.println("<body>");
+		out.println("Api Version "+ petStore.getApiVersion());
 		out.println("Swagger Version " + petStore.getSwaggerVersion());
 		out.println("<p>");
 		out.println(petStore.getInfo().getDescription());
@@ -58,6 +57,7 @@ public class Main {
 		out.println("<p>");
 		out.println(petStore.getInfo().getTermsOfServiceUrl());
 		out.println("</p>");
+		out.println("</body>");
 		out.println("</html>");
 		
 		out.close();
