@@ -7,6 +7,11 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Georgiana Danila
+ *
+ */
 public class ThreadAction implements Runnable{
 	private Socket client;
 
